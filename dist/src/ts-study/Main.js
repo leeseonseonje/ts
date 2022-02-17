@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Main = void 0;
 const Member_1 = require("./Member");
 class Main {
     getMember(username, age) {
@@ -7,10 +8,5 @@ class Main {
         return member;
     }
 }
-let main = new Main();
-let member = main.getMember("userA", 20);
-
-console.log(member.getUsername);
-console.log(member.getAge);
-console.log(member);
+exports.Main = Main;
 //# sourceMappingURL=Main.js.map

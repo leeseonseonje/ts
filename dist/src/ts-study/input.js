@@ -6,4 +6,5 @@ let member = main.getMember("userA", 20);
 console.log(member.getUsername());
 console.log(member.getAge());
 console.log(member);
+console.log("hello" + member.getUsername());
 //# sourceMappingURL=input.js.map
