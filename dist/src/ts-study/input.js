@@ -7,4 +7,13 @@ console.log(member.getUsername());
 console.log(member.getAge());
 console.log(member);
 console.log("hello" + member.getUsername());
+console.log(wrapInArray("hello"));
+function wrapInArray(obj) {
+    if (typeof obj === "string") {
+        return [obj];
+    }
+    else {
+        return obj;
+    }
+}
 //# sourceMappingURL=input.js.map
