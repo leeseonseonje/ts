@@ -7,5 +7,5 @@ class Golfer {
 }
 
 let car: Car = new Car();
-let glofer: Golfer = new Golfer();
-console.log(car == glofer);
+let golfer: Golfer = new Golfer();
+console.log(car == golfer);
