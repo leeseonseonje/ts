@@ -19,7 +19,7 @@ function greeter(person: Person) {
     return 'Hello, ' + person.firstName + ' ' + person.lastName;
 }
 
-let user = new Student("Lee", "Seon", "Je");
+let user = new Student("Lee", "S", "SeonJe");
 console.log(user);
 console.log(greeter({firstName: 'Lee', lastName: 'SeonJe'}));
 console.log(greeter(user));
