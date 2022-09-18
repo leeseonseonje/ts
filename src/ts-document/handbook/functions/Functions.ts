@@ -99,13 +99,39 @@ let s: string = "hello";
 let minimumLength1 = minimumLength(new Len("s", 1), 10);
 console.log(minimumLength1);
 
-function upper<Type extends { length: number }>(
-    obj: Type,
-    minimum: number
-): Type {
-    if (obj.length >= minimum) {
-        return obj;
-    } else {
-        return obj;
+function combine<Type>(arr1: Type[], arr2: Type[]): Type[] {
+    return arr1.concat(arr2);
+}
+let combine1 = combine<string | number>(["A", "B", "C"], [1, 2, 3]);
+console.log(combine1);
+
+function combineTest<T, U>(s: T, n: U) {
+    console.log(`result = ${s}, ${n}`);
+}
+
+combineTest("s", 1);
+combineTest<string, number>("s", 1);
+
+class A {
+    a: string;
+    constructor(a: string) {
+        this.a = a;
     }
 }
+
+class B extends A {
+    b: string;
+    constructor(a: string, b: string) {
+        super(a);
+        this.b = b;
+    }
+}
+
+function ab<T extends any>(a: T) {
+    console.log(a instanceof B);
+}
+
+let a = new A("A");
+ab(a);
+let b = new B("A", "B");
+ab(b);
