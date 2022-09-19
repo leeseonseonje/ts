@@ -135,3 +135,10 @@ let a = new A("A");
 ab(a);
 let b = new B("A", "B");
 ab(b);
+
+function f(x?: number) {
+    console.log(`x = ${x}`);
+}
+
+f();
+f(5);
