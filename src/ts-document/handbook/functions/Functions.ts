@@ -142,3 +142,49 @@ function f(x?: number) {
 
 f();
 f(5);
+f(undefined);
+
+function f2(x = 10) {
+    console.log(x);
+}
+f2();
+f2(5);
+
+function makeDate(timestamp: number): Date;
+function makeDate(m: number, d: number): Date;
+function makeDate(m: number, d: number, y: number): Date;
+function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
+    if (d !== undefined && y !== undefined) {
+        return new Date(y, mOrTimestamp, d);
+    } else {
+        return new Date(mOrTimestamp);
+    }
+}
+const d1 = makeDate(12345678);
+const d2 = makeDate(5, 5, 5);
+const d3 = makeDate(1, 3);
+
+function fnn(x: boolean): void;
+// Argument type isn't right
+function fnn(x: boolean): void;
+function fnn(x: boolean) {}
+
+function len(s: string): number;
+function len(arr: any[]): number;
+function len(x: any) {
+    return x.length;
+}
+
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+arr1.push(...arr2);
+
+console.log(arr1);
+
+const args = [8, 5] as const;
+const angle = Math.atan2(...args);
+
+function sum({ a, b, c }: { a: number; b: number; c: number }) {
+    console.log(a + b + c);
+}
+
