@@ -11,19 +11,18 @@ namespace Condition {
         ? IdLabel
         : NameLabel;
 
+    type N<T> = T extends string
+        ? string : number
+
     function createLabel<T extends number | string>(idOrName: T): NameOrId<T> {
-        if (typeof idOrName === "number") {
-            return {
-                id: idOrName,
-            }
-        }
-        return {
-            name: idOrName
-        }
+        return {name: idOrName} as NameOrId<T>;
     }
 
 
-    createLabel("Hello");
+    let nameLabel = createLabel("Hello");
+    let idLabel = createLabel(123);
+    console.log(nameLabel);
+    console.log(idLabel);
 
     type MessageOf<T extends { message: unknown }> = T["message"];
 
@@ -32,4 +31,6 @@ namespace Condition {
     }
 
     type EmailMessageContents = MessageOf<Email>;
+
+    type Flatten<Type> = Type extends Array<infer Item> ? Item : Type;
 }

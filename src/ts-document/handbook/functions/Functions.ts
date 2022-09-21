@@ -37,18 +37,17 @@ class Some {
         this.name = name;
     }
 }
+
 type SomeConstructor = {
-    new (s: string): Some;
+    new(s: string): Some;
 };
 
 function constructorFunction(ctor: SomeConstructor) {
     console.log(new ctor("hello"));
 }
-
 const fn2 = function (some: Some) {
     return Some;
 };
-
 constructorFunction(fn2(new Some("some")));
 
 function firstElement<T>(arr: T[]) {
