@@ -130,3 +130,8 @@ namespace ClassDocs {
     derived.sameAs(derived);
     base.sameAs(derived);
 }
+
+export const createCatName = () => "fluffy";
+
+const name = createCatName();
+console.log(name);
